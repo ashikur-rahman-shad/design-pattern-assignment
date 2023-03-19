@@ -1,5 +1,25 @@
 public class Main {
     public static void main(String[] args) {
+        //This part is done according to the instructions in the question
+        Seller Shamim_Store = new Seller("Walid", "Demra", "88017711728191");
+
+        Shamim_Store.addProduct("Potato", 12.5);
+        Shamim_Store.addProduct("Rice", 14.5);
+        Shamim_Store.showProducts();
+
+        Customer mohiuddin = new Customer("Mohiuddin", "mohuddin69@hotmail.com", "Charabag", "012344569");
+
+        System.out.println("\n\n" + mohiuddin.getName() + "'s cart:\n");
+        mohiuddin.cart().add(Shamim_Store.selectProduct(0), 4);
+        mohiuddin.cart().add(Shamim_Store.selectProduct(1), 1);
+
+        mohiuddin.cart().payment();
+
+
+        /*
+        But I personally prefer to do it this way, instead of creating an object in the Main class,
+        I prefer to call customers and sellers by ID from a Static ArrayList in Customer, Seller Class
+        //Like this:
 
         Seller.add("Walid", "Demra", "88017711728191");
 
@@ -14,5 +34,6 @@ public class Main {
         Customer.no(0).cart().add(Seller.no(0).selectProduct(1), 1);
 
         Customer.no(0).cart().payment();
+         */
     }
 }
