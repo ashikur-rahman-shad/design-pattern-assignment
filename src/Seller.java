@@ -7,10 +7,18 @@ public class Seller {
     private String contact_no;
     private ArrayList<Product> productList = new ArrayList<Product>();
 
-    private Seller(String name, String shop_address, String contact_no){
+    private Seller(String name, String shop_address, String contact_no) {
         this.name = name;
         this.shop_address = shop_address;
         this.contact_no = contact_no;
+    }
+
+    public static void add(String name, String shop_address, String contact_no) {
+        list.add(new Seller(name, shop_address, contact_no));
+    }
+
+    public static Seller no(int id) {
+        return list.get(id);
     }
 
     public String getName() {
@@ -41,30 +49,29 @@ public class Seller {
         return productList;
     }
 
-    public void addProduct(String name, double price){
-        productList.add(productList.size(), new Product(name,price));
+    public void addProduct(String name, double price) {
+        productList.add(productList.size(), new Product(name, price));
     }
 
-    public void setInfo(String name, String shop_address, String contact_no){
+    public void setInfo(String name, String shop_address, String contact_no) {
         this.name = name;
         this.shop_address = shop_address;
         this.contact_no = contact_no;
     }
-    public void showProducts(){
-        System.out.println("Products of "+ this.name +":");
-        for(int i=0; i<productList.size(); i++){
-            System.out.println((i+1) + ". " +
+
+    public void showProducts() {
+        System.out.println("Products of " + this.name + ":");
+        for (int i = 0; i < productList.size(); i++) {
+            System.out.println((i) + ". " +
                     productList.get(i).getName() +
                     " : " +
                     productList.get(i).getPrice()
             );
         }
     }
-    public static void add(String name, String shop_address, String contact_no){
-        list.add(new Seller(name, shop_address, contact_no));
-    }
-    public static Seller no(int id){
-        return list.get(id);
+
+    public Product selectProduct(int id) {
+        return productList.get(id);
     }
 
 }
