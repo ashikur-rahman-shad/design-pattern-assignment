@@ -7,7 +7,7 @@ public class Seller {
     private String contact_no;
     private ArrayList<Product> productList = new ArrayList<Product>();
 
-    public Seller(String name, String shop_address, String contact_no){
+    private Seller(String name, String shop_address, String contact_no){
         this.name = name;
         this.shop_address = shop_address;
         this.contact_no = contact_no;
@@ -61,7 +61,7 @@ public class Seller {
         }
     }
     public static void add(String name, String shop_address, String contact_no){
-        list.add(list.size(), new Seller(name, shop_address, contact_no));
+        list.add(new Seller(name, shop_address, contact_no));
     }
     public static Seller no(int id){
         return list.get(id);
