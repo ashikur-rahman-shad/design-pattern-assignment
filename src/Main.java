@@ -2,18 +2,16 @@ public class Main {
     public static void main(String[] args) {
         //This part is done according to the instructions in the question
         Seller Shamim_Store = new Seller("Walid", "Demra", "88017711728191");
+        Customer mohi = new Customer("Mohi", "mohi69@hotmail.com", "Charabag", "01234569");
 
         Shamim_Store.addProduct("Potato", 12.5);
         Shamim_Store.addProduct("Rice", 14.5);
         Shamim_Store.showProducts();
 
-        Customer mohiuddin = new Customer("Mohiuddin", "mohuddin69@hotmail.com", "Charabag", "012344569");
-
-        System.out.println("\n\n" + mohiuddin.getName() + "'s cart:\n");
-        mohiuddin.cart().add(Shamim_Store.selectProduct(0), 4);
-        mohiuddin.cart().add(Shamim_Store.selectProduct(1), 1);
-
-        mohiuddin.cart().payment();
+        System.out.println("\n" + mohi.getName() + "'s cart:\n");
+        mohi.cart().add(Shamim_Store.selectProduct(0), 4);
+        mohi.cart().add(Shamim_Store.selectProduct(1), 1);
+        mohi.cart().payment();
 
 
         /*
