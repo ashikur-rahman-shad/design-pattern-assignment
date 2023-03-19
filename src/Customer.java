@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Customer {
     private static ArrayList<Customer> list = new ArrayList<Customer>();
 
-    private Cart cart = new Cart();
+    private Payment payment = new Payment();
     private String name;
     private String email;
     private String address;
@@ -56,8 +56,8 @@ public class Customer {
         this.contact_no = contact_no;
     }
 
-    public Cart cart() {
-        return this.cart;
+    public Payment cart() {
+        return this.payment;
     }
 
 }
