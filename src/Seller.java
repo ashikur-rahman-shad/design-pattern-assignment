@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Seller {
-    public static ArrayList<Seller> seller = new ArrayList<Seller>();
+    public static ArrayList<Seller> list = new ArrayList<Seller>();
     private String name;
     private String shop_address;
     private String contact_no;
@@ -60,8 +60,8 @@ public class Seller {
             );
         }
     }
-    private static void addSeller(String name, String shop_address, String contact_no){
-        seller.add(seller.size(), new Seller(name, shop_address, contact_no));
+    public static void addSeller(String name, String shop_address, String contact_no){
+        list.add(list.size(), new Seller(name, shop_address, contact_no));
     }
 
 }
