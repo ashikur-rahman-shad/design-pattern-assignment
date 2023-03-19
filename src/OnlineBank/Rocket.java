@@ -1,6 +1,6 @@
 package OnlineBank;
 
-public class Rocket {
+public class Rocket implements OnlineBank{
     public String getName() {
         return "Rocket";
     }
