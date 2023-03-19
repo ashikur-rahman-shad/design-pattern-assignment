@@ -2,8 +2,6 @@ import OnlineBank.Bkash;
 import OnlineBank.Nagad;
 import OnlineBank.Rocket;
 
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -17,7 +15,6 @@ public class Main {
         Seller.no(0).addProduct("Rice", 14.5);
         Seller.no(0).showProducts();
 
-
         Customer.add("Mohiuddin", "mohuddin69@hotmail.com", "Charabag", "012344569");
 
         System.out.println("\n" + Customer.no(0).getName() + "'s cart:\n");
@@ -29,6 +26,5 @@ public class Main {
         System.out.println("\nOn Bkash: \tBDT "+ bkash.calculateCharge(Customer.no(0).cart().grandTotal()));
         System.out.println("On Nagad: \tBDT "+ nagad.calculateCharge(Customer.no(0).cart().grandTotal()));
         System.out.println("On Bkash: \tBDT "+ rocket.calculateCharge(Customer.no(0).cart().grandTotal()));
-
     }
 }
