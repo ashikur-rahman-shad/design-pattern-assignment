@@ -8,20 +8,23 @@ public class Cart {
     }
 
     public void show() {
-        double grandTotal = 0;
         double total;
         for (Order order : cart) {
-            total = order.getProduct().getPrice() * order.getQuantity();
-            grandTotal += total;
             System.out.println(order.getProduct().getName()
                     + ":\t"
                     + order.getProduct().getPrice()
                     + "\tx\t"
                     + order.getQuantity()
                     + "\t=\tBDT "
-                    + total
+                    + order.getProduct().getPrice() * order.getQuantity()
             );
         }
-        System.out.println("\nGrand Total:\t\t\t=\tBDT " + grandTotal);
+    }
+    double grandTotal(){
+        double grandTotal = 0;
+        for (Order order : cart) {
+            grandTotal += order.getProduct().getPrice() * order.getQuantity();
+        }
+        return grandTotal;
     }
 }
