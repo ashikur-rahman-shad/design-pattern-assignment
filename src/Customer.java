@@ -9,7 +9,7 @@ public class Customer {
     private String address;
     private String contact_no;
 
-    private Customer(String name, String email, String address, String contact_no) {
+     Customer(String name, String email, String address, String contact_no) {
         this.name = name;
         this.email = email;
         this.address = address;
